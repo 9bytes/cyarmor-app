@@ -98,7 +98,7 @@
   .pc-link {
     display: flex;
     align-items: center;
-    padding: 12px 20px;
+    padding: 6px 20px;
     margin: 2px 0;
     color: var(--pc-sidebar-color);
     position: relative;
@@ -200,7 +200,7 @@
 
     .pc-submenu {
       .pc-link {
-        padding: 12px 30px 12px 52px;
+        padding: 6px 30px 6px 52px;
 
         &:after {
           left: 28px;
@@ -209,7 +209,7 @@
 
       .pc-submenu {
         .pc-link {
-          padding: 12px 30px 12px 80px;
+          padding: 6px 30px 6px 80px;
 
           &:after {
             left: 62px;
@@ -587,3 +587,19 @@ body:not(.minimenu) {
   }
 }
 // Sidebar css end
+
+// Michroma font for all purple (#8e85f2) colored text in sidebar
+.pc-sidebar {
+  .pc-item {
+    &.active > .pc-link,
+    &.pc-trigger > .pc-link {
+      .pc-mtext {
+        font-family: "Michroma", sans-serif;
+      }
+    }
+  }
+  .pc-caption label {
+    font-family: "Michroma", sans-serif;
+  }
+
+}

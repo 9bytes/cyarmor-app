@@ -2,7 +2,14 @@ import { lazy } from 'react';
 
 import AdminLayout from 'layouts/AdminLayout';
 import GuestLayout from 'layouts/GuestLayout';
-
+const UserActivity = lazy(() => import('../views/UserActivity/index'));
+const MyAssessment = lazy(() => import('../views/Assessment/MyAssessment/index'));
+const RiskDashboard = lazy(() => import('../views/RiskManagement/Dashboard/index'));
+const RiskIdentification = lazy(() => import('../views/RiskManagement/Identification/index'));
+const RiskAssessment = lazy(() => import('../views/RiskManagement/Assessment/index'));
+const RiskMitigation = lazy(() => import('../views/RiskManagement/Mitigation/index'));
+const RiskImplementation = lazy(() => import('../views/RiskManagement/Implementation/index'));
+const Incident = lazy(() => import('../views/IncidentManagement/Incident/index'));
 const DashboardSales = lazy(() => import('../views/dashboard/DashSales/index'));
 
 const Typography = lazy(() => import('../views/ui-elements/basic/BasicTypography'));
@@ -52,7 +59,35 @@ const MainRoutes = {
         {
           path: '/sample-page',
           element: <Sample />
-        }
+        },
+        {
+          path: '/user-activity',
+          element: <UserActivity />
+        },
+        {
+          path: '/assessment/my-assessment',
+          element: <MyAssessment />
+        },
+        {
+        path: '/risk-management/dashboard',
+        element: <RiskDashboard />
+        },
+        {
+          path: '/risk-management/identification',
+          element: <RiskIdentification />
+        },
+        { path: '/risk-management/assessment', 
+          element: <RiskAssessment /> 
+        },
+        { path: '/risk-management/mitigation', 
+          element: <RiskMitigation /> 
+        },
+        { path: '/risk-management/implementation', 
+          element: <RiskImplementation /> 
+        },
+        { path: '/incident-management/incident', 
+          element: <Incident /> 
+        },
       ]
     },
     {

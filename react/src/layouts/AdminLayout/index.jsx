@@ -11,7 +11,7 @@ import { ConfigContext } from 'contexts/ConfigContext';
 import * as actionType from 'store/actions';
 import Loader from 'components/Loader/Loader';
 
-import { BUY_NOW } from 'config/constant';
+
 
 // -----------------------|| ADMIN LAYOUT ||-----------------------//
 
@@ -48,9 +48,23 @@ export default function AdminLayout() {
             </Suspense>
           </>
         </div>
-        <a href={BUY_NOW} target="_blank" className="btn btn-danger position-fixed bottom-0 end-0 mb-5 me-3 z-1" rel="noreferrer">
-          Buy Now
-        </a>
+   <div
+  className="position-fixed bottom-0 end-0 mb-4 me-4 z-1"
+  style={{
+    width: '56px',
+    height: '56px',
+    borderRadius: '50%',
+    background: '#e74c3c',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    boxShadow: '0 4px 15px rgba(231, 76, 60, 0.5)'
+  }}
+  title="Chat with us"
+>
+  <i className="ph-duotone ph-robot" style={{ fontSize: '28px', color: '#fff' }} />
+</div>
       </div>
       <Footer />
     </>

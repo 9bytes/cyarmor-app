@@ -14,6 +14,8 @@ import { ConfigContext } from 'contexts/ConfigContext';
 import * as actionType from 'store/actions';
 import useWindowSize from 'hooks/useWindowSize';
 
+
+
 // -----------------------|| NAV ITEM ||-----------------------//
 
 export default function NavItem({ item }) {
@@ -39,14 +41,16 @@ export default function NavItem({ item }) {
   if (item.target) {
     itemTarget = '_blank';
   }
-  let navItemClass = ['pc-item'];
-  const currentIndex = document.location.pathname
-    .toString()
-    .split('/')
-    .findIndex((id) => id === item.id);
-  if (currentIndex > -1) {
-    navItemClass = [...navItemClass, 'active'];
-  }
+let navItemClass = ['pc-item'];
+const currentIndex = item.url && item.url !== '#'
+  ? document.location.pathname
+      .toString()
+      .split('/')
+      .findIndex((id) => id === item.id)
+  : -1;
+if (currentIndex > -1) {
+  navItemClass = [...navItemClass, 'active'];
+}
 
   const navLinkClass = ['pc-link'];
 
@@ -60,7 +64,7 @@ export default function NavItem({ item }) {
     );
   } else {
     subContent = (
-      <NavLink to={item.url} className={navLinkClass.join(' ')} target={itemTarget}>
+      <NavLink to={item.url === '#' ? '.' : item.url} className={navLinkClass.join(' ')} target={itemTarget} onClick={item.url === '#' ? (e) => e.preventDefault() : undefined}>
         <NavIcon items={item} />
         {itemTitle}
       </NavLink>

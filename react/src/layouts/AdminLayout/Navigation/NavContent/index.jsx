@@ -18,6 +18,9 @@ import logo from 'assets/images/logo.svg';
 import logoSM from 'assets/images/logo-sm.svg';
 import logoSMLight from 'assets/images/logo-sm-light.svg';
 
+//styles
+import './styles.scss'
+
 // -----------------------|| NAV CONTENT ||-----------------------//
 
 export default function NavContent({ navigation, activeNav }) {

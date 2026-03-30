@@ -113,5 +113,8 @@ export default function Breadcrumb() {
     document.title = title + BASE_TITLE;
   }
 
-  return <>{breadcrumbContent}</>;
+  if (document.location.pathname.includes('/user-activity')) {
+  return null;
+}
+return null;
 }

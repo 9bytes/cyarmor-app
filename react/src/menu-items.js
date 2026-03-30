@@ -1,162 +1,330 @@
-// Menu configuration for default layout
+// menu-items.js
+//
+// All ids are prefixed with 'nav-' to prevent accidental URL segment
+// matches. NavItem checks if item.id exists in the current URL path
+// segments — without the prefix, generic words like 'dashboard',
+// 'management', 'users' would match and highlight incorrectly.
+
 const menuItems = {
   items: [
+
+    // ─────────────────────────────────────────────
+    // GROUP 1 — Security Services
+    // ─────────────────────────────────────────────
     {
-      id: 'navigation',
-      title: 'Navigation',
+      id: 'nav-security-services',
+      title: 'Security Services',
       type: 'group',
-      icon: 'icon-navigation',
       children: [
+
         {
-          id: 'dashboard',
+          id: 'nav-dashboard',
           title: 'Dashboard',
+          type: 'item',
+          url: '/dashboard/sales',
+          icon: 'ph-squares-four',
+        },
+
+        {
+          id: 'nav-user-activity',
+          title: 'User Activity',
+          type: 'item',
+          url: '/user-activity',
+          icon: 'ph-activity',
+        },
+
+      ],
+    },
+
+    // ─────────────────────────────────────────────
+    // GROUP 2 — Risk & Compliance
+    // ─────────────────────────────────────────────
+    {
+      id: 'nav-risk-compliance',
+      title: 'Risk & Compliance',
+      type: 'group',
+      children: [
+
+        {
+          id: 'nav-assessment',
+          title: 'Assessment',
           type: 'collapse',
-          icon: 'ph-gauge',
+          icon: 'ph-clipboard-text',
           children: [
             {
-              id: 'sales',
-              title: 'Sales',
+              id: 'nav-my-assessment',
+              title: 'My Assessment',
               type: 'item',
-              url: '/dashboard/sales'
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'ui-element',
-      title: 'ELEMENTS',
-      subtitle: 'UI Components',
-      type: 'group',
-      icon: 'icon-ui',
-      children: [
-        {
-          id: 'typography',
-          title: 'Typography',
-          type: 'item',
-          icon: 'ph-compass-tool',
-          url: '/typography'
+              url: '/assessment/my-assessment',
+            },
+          ],
         },
+
         {
-          id: 'color',
-          title: 'Color',
-          type: 'item',
-          icon: 'ph-palette',
-          url: '/color'
-        },
-        {
-          id: 'icons',
-          title: 'Icons',
+          id: 'nav-risk-management',
+          title: 'Risk Management',
           type: 'collapse',
-          icon: 'ph-flower-lotus',
+          icon: 'ph-shield-warning',
           children: [
             {
-              id: 'font-awesome-5',
-              title: 'Font Awesome',
+              id: 'nav-risk-dashboard',
+              title: 'Dashboard',
               type: 'item',
-              url: '/icons/font-awesome-5'
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'pages',
-      title: 'Pages',
-      subtitle: '15+ Redymade Pages',
-      type: 'group',
-      icon: 'icon-pages',
-      children: [
-        {
-          id: 'login',
-          title: 'Login',
-          type: 'item',
-          icon: 'ph-lock-key',
-          url: '/login',
-          target: true
-        },
-        {
-          id: 'register',
-          title: 'Register',
-          type: 'item',
-          icon: 'ph-user-circle-plus',
-          url: '/register',
-          target: true
-        }
-      ]
-    },
-    {
-      id: 'support',
-      title: 'OTHER',
-      subtitle: 'Extra More Things',
-      type: 'group',
-      icon: 'icon-support',
-      children: [
-        {
-          id: 'sample-page',
-          title: 'Sample Page',
-          type: 'item',
-          url: '/sample-page',
-          classes: 'nav-item',
-          icon: 'ph-desktop'
-        },
-        {
-          id: 'menu-level',
-          title: 'Menu Levels',
-          type: 'collapse',
-          icon: 'ph-tree-structure',
-          children: [
-            {
-              id: 'menu-level-1.1',
-              title: 'Level 1.1',
-              type: 'item',
-              url: '#'
+              url: '/risk-management/dashboard',
             },
             {
-              id: 'menu-level-1.2',
-              title: 'Level 2.2',
-              type: 'collapse',
-              children: [
-                {
-                  id: 'menu-level-2.1',
-                  title: 'Level 2.1',
-                  type: 'item',
-                  url: '#'
-                },
-                {
-                  id: 'menu-level-2.2',
-                  title: 'Level 2.2',
-                  type: 'collapse',
-                  children: [
-                    {
-                      id: 'menu-level-3.1',
-                      title: 'Level 3.1',
-                      type: 'item',
-                      url: '#'
-                    },
-                    {
-                      id: 'menu-level-3.2',
-                      title: 'Level 3.2',
-                      type: 'item',
-                      url: '#'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+              id: 'nav-risk-identification',
+              title: 'Identification',
+              type: 'item',
+              url: '/risk-management/identification',
+            },
+            {
+              id: 'nav-risk-assessment',
+              title: 'Assessment',
+              type: 'item',
+              url: '/risk-management/assessment',
+            },
+            {
+              id: 'nav-risk-mitigation',
+              title: 'Mitigation',
+              type: 'item',
+              url: '/risk-management/mitigation',
+            },
+            {
+              id: 'nav-risk-implementation',
+              title: 'Implementation',
+              type: 'item',
+              url: '/risk-management/implementation',
+            },
+          ],
         },
+
         {
-          id: 'disabled-menu',
-          title: 'Disabled Menu',
+          id: 'nav-incident-management',
+          title: 'Incident Management',
+          type: 'collapse',
+          icon: 'ph-warning-octagon',
+          children: [
+            {
+              id: 'nav-incident',
+              title: 'Incident',
+              type: 'item',
+              url: '/incident-management/incident',
+            },
+          ],
+        },
+
+      ],
+    },
+
+    // ─────────────────────────────────────────────
+    // GROUP 3 — Administration
+    // ─────────────────────────────────────────────
+    {
+      id: 'nav-administration',
+      title: 'Administration',
+      type: 'group',
+      children: [
+
+        {
+          id: 'nav-user-management',
+          title: 'User Management',
+          type: 'collapse',
+          icon: 'ph-users-three',
+          children: [
+            {
+              id: 'nav-users',
+              title: 'Users',
+              type: 'item',
+              url: '#',
+            },
+            {
+              id: 'nav-user-groups',
+              title: 'User Groups',
+              type: 'item',
+              url: '#', 
+            },
+            {
+              id: 'nav-roles',
+              title: 'Roles',
+              type: 'item',
+              url: '#',
+            },
+          ],
+        },
+
+        {
+          id: 'nav-device-management',
+          title: 'Device Management',
+          type: 'collapse',
+          icon: 'ph-devices',
+          children: [
+            {
+              id: 'nav-devices',
+              title: 'Devices',
+              type: 'item',
+              url: '#',
+            },
+            {
+              id: 'nav-device-groups',
+              title: 'Device Groups',
+              type: 'item',
+              url: '#',
+            },
+          ],
+        },
+
+        {
+          id: 'nav-app-management',
+          title: 'App Management',
           type: 'item',
           url: '#',
-          classes: 'nav-item disabled',
-          icon: 'ph-cloud-slash'
-        }
-      ]
-    }
-  ]
+          icon: 'ph-app-window',
+        },
+
+      ],
+    },
+
+    // ─────────────────────────────────────────────
+    // GROUP 4 — Management
+    // ─────────────────────────────────────────────
+    {
+      id: 'nav-management',
+      title: 'Management',
+      type: 'group',
+      children: [
+
+        {
+          id: 'nav-policies',
+          title: 'Policies',
+          type: 'item',
+          url: '#',
+          icon: 'ph-file-text',
+        },
+
+        {
+          id: 'nav-jobs',
+          title: 'Jobs',
+          type: 'item',
+          url: '#',
+          icon: 'ph-briefcase',
+        },
+
+        {
+          id: 'nav-workspaces',
+          title: 'Workspaces',
+          type: 'item',
+          url: '#',
+          icon: 'ph-house-line',
+        },
+
+        {
+          id: 'nav-modules',
+          title: 'Modules',
+          type: 'item',
+          url: '#',
+          icon: 'ph-stack',
+        },
+
+        {
+          id: 'nav-requests',
+          title: 'Requests',
+          type: 'item',
+          url: '#',
+          icon: 'ph-chat-dots',
+        },
+
+      ],
+    },
+
+    // ─────────────────────────────────────────────
+    // GROUP 5 — System
+    // ─────────────────────────────────────────────
+    {
+      id: 'nav-system',
+      title: 'System',
+      type: 'group',
+      children: [
+
+        {
+          id: 'nav-settings',
+          title: 'Settings',
+          type: 'collapse',
+          icon: 'ph-gear-six',
+          children: [
+
+            {
+              id: 'nav-file-settings',
+              title: 'File Settings',
+              type: 'item',
+              url: '#',
+            },
+
+            {
+              id: 'nav-grc',
+              title: 'GRC',
+              type: 'collapse',
+              icon: 'ph-tree-structure',
+              children: [
+                {
+                  id: 'nav-grc-master',
+                  title: 'GRC Master',
+                  type: 'item',
+                  url: '#',
+                },
+                {
+                  id: 'nav-grc-fields',
+                  title: 'Fields',
+                  type: 'item',
+                  url: '#',
+                },
+                {
+                  id: 'nav-grc-iso27001',
+                  title: 'ISO27001',
+                  type: 'item',
+                  url: '#',
+                },
+                {
+                  id: 'nav-grc-soc1',
+                  title: 'SOC1',
+                  type: 'item',
+                  url: '#',
+                },
+                {
+                  id: 'nav-grc-soc2',
+                  title: 'SOC2',
+                  type: 'item',
+                  url: '#',
+                },
+                {
+                  id: 'nav-grc-rbi',
+                  title: 'RBI',
+                  type: 'item',
+                  url: '#',
+                },
+                {
+                  id: 'nav-grc-iso42001',
+                  title: 'ISO42001',
+                  type: 'item',
+                  url: '#',
+                },
+              ],
+            },
+
+            {
+              id: 'nav-remote-apps',
+              title: 'Remote Apps',
+              type: 'item',
+              url: '#',
+            },
+
+          ],
+        },
+
+      ],
+    },
+
+  ],
 };
 
 export default menuItems;
