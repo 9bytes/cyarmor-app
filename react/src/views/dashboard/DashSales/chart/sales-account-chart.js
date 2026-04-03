@@ -19,7 +19,7 @@ export function SalesAccountChartData() {
       fill: {
         opacity: [0.85, 1]
       },
-      labels: ['Jan 01', 'Feb 01', 'Mar 01', 'Apr 01', 'May 01', 'Jun 01', 'Jul 01', 'Aug 01', 'Sep 01', 'Oct 01', 'Nov 01', 'Dec 01'],
+      labels: ['Productive', 'NonProductive', 'Others', 'Idle'],
       markers: {
         size: 0
       },
@@ -60,12 +60,12 @@ export function SalesAccountChartData() {
       {
         name: 'Total Sales',
         type: 'column',
-        data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30, 40]
+        data: [23, 11, 22, 27,]
       },
       {
         name: 'Average',
         type: 'line',
-        data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 51]
+        data: [30, 25, 36, 30,]
       }
     ]
   };

@@ -15,7 +15,7 @@ import { SalesSupportChartData1 } from './chart/sales-support-chart1';
 import feedData from 'data/feedData';
 import productData from 'data/productTableData';
 
-// -----------------------|| DASHBOARD SALES ||-----------------------/
+// -----------------------|| DASHBOARD SALES ||-----------------------//
 export default function DashSales() {
   return (
     <>
@@ -70,30 +70,42 @@ export default function DashSales() {
       Next-Gen Protection
     </div>
     <div style={{
-      fontSize: '20px',
+      fontSize: '42px',
       fontWeight: '400',
       lineHeight: '1.2',
       color: '#ffffff',
       fontFamily: '"Michroma", sans-serif'
     }}>
-      Work <span style={{ fontSize:'20px',color: '#ffffff',  }}>Any Where</span>{' '}
-      <span style={{ color: '#8e85f2', fontSize:'20px' }}>  Stay Compliant Every Where</span>
+      Work <span style={{ fontSize:'50px',color: '#ffffff',  }}>Any Where</span>{' '}
+      <span style={{ color: '#8e85f2', fontSize:'26px' }}>  Stay Compliant Every Where</span>
     </div>
   </div>
 </Card>
           <Row>
             <Col md={6}> 
               <Card className="support-bar overflow-hidden">
-                <Card.Header>
-              <h6>Frequently opened apps</h6>
-            </Card.Header>
-            <Card.Body className="pb-0">
-                  <h2 className="m-0">1432</h2>
-                  <span className="text-primary">Order Delivered</span>
+                <Card.Body className="pb-0">
+                  <h2 className="m-0">53.94%</h2>
+                  <span className="text-primary">Conversion Rate</span>
                   <p className="mb-3 mt-3">Number of conversions divided by the total visitors.</p>
                 </Card.Body>
-               
-            
+                <Chart {...SalesSupportChartData()} />
+                <Card.Footer className="border-0 bg-primary text-white background-pattern-white">
+                  <Row className="text-center">
+                    <Col>
+                      <h4 className="m-0 text-white">10</h4>
+                      <span>2018</span>
+                    </Col>
+                    <Col>
+                      <h4 className="m-0 text-white">15</h4>
+                      <span>2017</span>
+                    </Col>
+                    <Col>
+                      <h4 className="m-0 text-white">13</h4>
+                      <span>2016</span>
+                    </Col>
+                  </Row>
+                </Card.Footer>
               </Card>
             </Col>
             <Col md={6}>
@@ -128,7 +140,7 @@ export default function DashSales() {
         <Col md={12} xl={6}>
           <Card>
             <Card.Header>
-              <h6>Productivity (based on web & apps usage)</h6>
+              <h4>Productivity (based on web & apps usage)</h4>
             </Card.Header>
             <Card.Body>
               
